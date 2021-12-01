@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 // buildout Mongo schema below-- schema will connect to Mongo DB collection
 const Schema = mongoose.Schema;
 
-// Schema begins
+// Schema begins-- name, type, weight, sets, reps, and duration of exercise
 const workoutSchema = new Schema ({
     day: {
         type: Date,
