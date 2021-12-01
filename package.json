@@ -1,0 +1,25 @@
+{
+  "name": "fitness_tracker",
+  "version": "1.0.0",
+  "description": "fitness tracker that allows you to add exercises, reps, and sets",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ajdavis2424/fitness_tracker.git"
+  },
+  "author": "Alexander J. Davis",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ajdavis2424/fitness_tracker/issues"
+  },
+  "homepage": "https://github.com/ajdavis2424/fitness_tracker#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mongoose": "^6.0.14"
+  }
+}
