@@ -44,7 +44,7 @@ const workoutSchema = new Schema (
 },
         {
             toObject: { virtuals: true },
-		toJSON: { virtuals: true },
+		    toJSON: { virtuals: true },
         });
 
             // Total the duration of workouts
