@@ -5,12 +5,14 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 // Schema begins-- name, type, weight, sets, reps, and duration of exercise
-const workoutSchema = new Schema ({
+const workoutSchema = new Schema (
+    {
     day: {
         type: Date,
         default: Date.now
     },
-    exercises: [{
+    exercises: [
+        {
         type: {
             type: String,
             trim: true,
@@ -39,8 +41,20 @@ const workoutSchema = new Schema ({
             type: Number
         }      
     }]
-});
+},
+        {
+            toObject: { virtuals: true },
+		toJSON: { virtuals: true },
+        });
 
+            // Total the duration of workouts
+        workoutSchema.virtual("totalDuration").get(function () {
+            return this.exercises.reduce((duration, singleExercise) => {
+                return duration + singleExercise.duration;
+            }, 0);
+        });
+
+        
 /** CAN I Create and Save a workout */
 // var lift = mongoose.model('Workkout', workoutSchema);
 

@@ -8,23 +8,24 @@ const routes = require("./routes");
 
 const db = require("./models")
 
+// MONGOOSE CONNECTION
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
+  //Per Trey Keep these 
+useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true,
+  useFindAndModify: false
+});
+
 const app = express();
-
-app.use(logger("dev"));
-
-app.use('/', routes);
-
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use(express.static("public"));
 
-// MONGOOSE CONNECTION
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
-  useNewUrlParser: true,
-  useFindAndModify: false
-});
+app.use(logger("dev"));
 
+app.use(routes);
 // // routes
 // app.use(require("./routes/api.js"));
 
