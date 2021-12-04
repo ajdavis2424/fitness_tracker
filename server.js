@@ -1,7 +1,7 @@
 // Requires for mongos and express server
 const express = require("express");
 const mongoose = require("mongoose");
-const logger = require(morgan)
+const logger = require("morgan");
 const PORT = process.env.PORT || 3000;
 // Server will use routes directory for routing API &HTML requests
 const routes = require("./routes");
